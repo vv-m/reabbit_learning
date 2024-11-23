@@ -8,6 +8,7 @@ from brokers.rabbit_broker import broker
 # Этот метод позволяет управлять ресурсами, которые нужно запускать и закрывать с приложением
 @asynccontextmanager
 async def lifespan(app: FastAPI):  # noqa
+    # await broker.declare_queue("task-topic", durable=True)
     await broker.start()  # Запуск Kafka брокера при старте приложения
     # scheduler.start()  # Запуск планировщика задач
     yield

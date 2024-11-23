@@ -16,6 +16,4 @@ services:
 
 volumes:
   rabbitmq_data:
-    driver: local
   rabbitmq_logs:
-    driver: local
